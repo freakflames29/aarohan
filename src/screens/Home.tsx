@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../App.css'
-
+import IMG from "../assets/logo.png"
+import ROUNDLOGO from "../assets/round.png"
 function Home() {
   const [isVisible, setIsVisible] = useState(false)
   const WHATSAPP_NUMBER = '916290717007'
@@ -20,8 +21,10 @@ function Home() {
       <nav className="navbar">
         <div className="nav-content">
           <div className="logo">
-            <span className="logo-icon">🚀</span>
-            <span className="logo-text">Aarohan</span>
+
+            {/* <span className="logo-icon">🚀</span> */}
+            {/* <span className="logo-text">Aarohan</span> */}
+            <img src={IMG} className='logoImg'/>
           </div>
           <div className="nav-links">
             <a href="#services" className="nav-link">Services</a>
@@ -121,7 +124,9 @@ function Home() {
           <div className="footer-left">
             <div className="logo">
               {/* <span className="logo-icon">🚀</span> */}
-              <span className="white">Aarohan</span>
+              {/* <span className="white">Aarohan</span> */}
+            <img src={ROUNDLOGO} className='logoImg footerLogo'/>
+
             </div>
             <p>Launching brands into the stratosphere since day one. Your competitors are still looking up. 👀</p>
           </div>

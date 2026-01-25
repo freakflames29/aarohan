@@ -121,7 +121,14 @@
   max-width: 700px;
   text-align: center;
 }
-
+.logoImg{
+  width: 15%;
+  height: 15%;
+}
+.footerLogo{
+  width: 25%;
+  height: 25%;
+}
 .badge {
   display: inline-flex;
   align-items: center;
