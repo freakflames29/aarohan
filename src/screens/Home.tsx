@@ -3,14 +3,16 @@ import '../App.css'
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false)
+  const WHATSAPP_NUMBER = '916290717007'
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact')
-    contactSection?.scrollIntoView({ behavior: 'smooth' })
+  const openWhatsApp = () => {
+    const message = 'Hi Aarohan! I want to discuss my marketing needs. 🚀'
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
   }
 
   return (
@@ -18,13 +20,12 @@ function Home() {
       <nav className="navbar">
         <div className="nav-content">
           <div className="logo">
-            <span className="logo-icon">⚡</span>
-            <span className="logo-text">DigitalWiz</span>
+            <span className="logo-icon">🚀</span>
+            <span className="logo-text">Aarohan</span>
           </div>
           <div className="nav-links">
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
+            <a href="#services" className="nav-link">Services</a>
+            <button onClick={openWhatsApp} className="nav-link nav-btn">Contact</button>
           </div>
         </div>
       </nav>
@@ -37,25 +38,23 @@ function Home() {
           </div>
 
           <h1 className="hero-title">
-            We Don't Do
-            <span className="gradient-text"> Boring</span>
+            Your Brand's
+            <br/>
+            <span className="isRegularitalic"> Growth Rocket</span>
+            {/* <span className=""> Rocket</span> */}
             <br />
-            We Do <span className="gradient-text">Legendary</span>
+            Takes Off Here
           </h1>
 
-          <p className="hero-subtitle">
-            Marketing so good, even your competitors will secretly follow us.
+          <p className="hero-subtitle ">
+            We turn "nobody knows us" into "everybody loves us" faster than you can say algorithm.
             <br />
-            <span className="pun">(Yes, we've checked their search history)</span>
+            <span className="pun">Spoiler: Your competitors are already losing sleep. 😴</span>
           </p>
 
           <div className="cta-buttons">
-            <button className="btn btn-primary" onClick={scrollToContact}>
+            <button className="btn btn-primary" onClick={openWhatsApp}>
               <span>Let's Create Magic</span>
-              <div className="btn-glow"></div>
-            </button>
-            <button className="btn btn-secondary">
-              <span>See Our Wizardry</span>
             </button>
           </div>
 
@@ -75,62 +74,44 @@ function Home() {
           </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="floating-card card-1">
-            <div className="card-icon">📈</div>
-            <div className="card-text">+340% Growth</div>
-          </div>
-          <div className="floating-card card-2">
-            <div className="card-icon">🎯</div>
-            <div className="card-text">Perfect Target</div>
-          </div>
-          <div className="floating-card card-3">
-            <div className="card-icon">💡</div>
-            <div className="card-text">Brilliant Ideas</div>
-          </div>
-          <div className="gradient-orb orb-1"></div>
-          <div className="gradient-orb orb-2"></div>
-          <div className="gradient-orb orb-3"></div>
-        </div>
       </section>
 
       <section className="services" id="services">
         <div className="section-header">
-          <h2>What We Do <span className="highlight">(Spoiler: Everything)</span></h2>
+          <h2>What We Do <span className="highlight isRegularitalic">(Spoiler: Everything)</span></h2>
           <p>From zero to hero, we've got your back. And your front. And your sides.</p>
         </div>
 
         <div className="services-grid">
-          <div className="service-card">
+          <div className="service-card card-purple">
             <div className="service-icon">🚀</div>
             <h3>Social Media Sorcery</h3>
-            <p>We make your brand go viral. (The good kind, not the pandemic kind)</p>
+            <p>We make your brand go viral (the "everyone's talking about you" kind, not the "stay home" kind).</p>
           </div>
-          <div className="service-card">
+          <div className="service-card card-pink">
             <div className="service-icon">🎨</div>
             <h3>Content That Converts</h3>
-            <p>Words that sell. Designs that compel. Results that excel.</p>
+            <p>Words so good, even your grandma will click. Designs so fire, they need a fire extinguisher.</p>
           </div>
-          <div className="service-card">
+          <div className="service-card card-cyan">
             <div className="service-icon">📊</div>
-            <h3>SEO Wizardry</h3>
-            <p>We'll get you to #1 on Google. Your competitors will hate us.</p>
+            <h3>SEO That Ranks</h3>
+            <p>We'll get you to Google's #1 spot. Your competitors? They'll be hitting refresh praying for miracles.</p>
           </div>
-          <div className="service-card">
+          <div className="service-card card-yellow">
             <div className="service-icon">⚡</div>
-            <h3>Paid Ads Mastery</h3>
-            <p>Every dollar works harder than a caffeine-fueled startup founder.</p>
+            <h3>Paid Ads That Pop</h3>
+            <p>Every rupee works harder than a startup founder on coffee. Results so good, you'll think it's magic.</p>
           </div>
         </div>
       </section>
 
       <section className="cta-section" id="contact">
         <div className="cta-content">
-          <h2>Ready to Stop Being Invisible?</h2>
+          <h2 className='isRegular'>Ready to Stop Being Invisible?</h2>
           <p>Let's make your brand impossible to ignore. (In a good way, promise)</p>
-          <button className="btn btn-primary btn-large">
+          <button className="btn btn-primary btn-large" onClick={openWhatsApp}>
             <span>Start Your Transformation</span>
-            <div className="btn-glow"></div>
           </button>
         </div>
       </section>
@@ -139,17 +120,18 @@ function Home() {
         <div className="footer-content">
           <div className="footer-left">
             <div className="logo">
-              <span className="logo-icon">⚡</span>
-              <span className="logo-text">DigitalWiz</span>
+              {/* <span className="logo-icon">🚀</span> */}
+              <span className="white">Aarohan</span>
             </div>
-            <p>Making brands legendary since... well, recently. But we're really good at it.</p>
+            <p>Launching brands into the stratosphere since day one. Your competitors are still looking up. 👀</p>
           </div>
           <div className="footer-right">
             <div className="footer-links">
               <a href="#services">Services</a>
-              <a href="#work">Work</a>
-              <a href="#contact">Contact</a>
-              <a href="#">Privacy</a>
+              <button onClick={openWhatsApp} className="footer-link-btn">Contact</button>
+              {/* <a href="#">
+                <button>Privacy</button>
+              </a> */}
             </div>
           </div>
         </div>
