@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
 import "../App.css";
-import IMG from "../assets/logo.png";
+import IMG from "../assets/blacklogo.png";
+import HERO from "../assets/hero_png.png";
 import ROUNDLOGO from "../assets/round.png";
 import Career from "./Career/Career";
 import AboutUs from "./About/AboutUs";
 import { SERVICES } from "../data/services";
 import { CAREER_POSITIONS } from "../data/career";
 
-
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [isCareerOpen, setIsCareerOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const WHATSAPP_NUMBER = "916290717007";
-
 
   useEffect(() => {
     setIsVisible(true);
@@ -30,6 +29,7 @@ function Home() {
       <nav className="navbar">
         <div className="nav-content">
           <div className="logo">
+            {/* <h3 className="logoFont">Aarohan</h3> */}
             <img src={IMG} className="logoImg" />
           </div>
           <div className="nav-links">
@@ -57,47 +57,55 @@ function Home() {
 
       <section className={`hero ${isVisible ? "visible" : ""}`}>
         <div className="hero-content">
-          <div className="badge">
-            <span className="badge-dot"></span>
-            Available for projects
+          <div className="hero-left">
+            <div className="badge">
+              <span className="badge-dot"></span>
+              Available for projects
+            </div>
+            <h1 className="hero-title">
+              Your Brand's
+              <br />
+              <span className="isRegularitalic colorText"> Growth Rocket</span>
+              <br />
+              Takes Off Here
+            </h1>
+            <p className="hero-subtitle">
+              We turn "nobody knows us" into "everybody loves us" faster than
+              you can say algorithm.
+              <br />
+              <span className="pun">
+                Spoiler: Your competitors are already losing sleep. 😴
+              </span>
+            </p>
+            <div className="cta-buttons">
+              <button className="btn btn-primary" onClick={openWhatsApp}>
+                <span>Let's Create Magic</span>
+              </button>
+            </div>
+            <div className="stats">
+              <div className="stat">
+                <div className="stat-number">347%</div>
+                <div className="stat-label">
+                  <span className="stat-labelText">Avg. ROI Boost</span>
+                </div>
+              </div>
+              <div className="stat">
+                <div className="stat-number">2.4M+</div>
+                <div className="stat-label">
+                  <span className="stat-labelText">Clicks Generated</span>
+                </div>
+              </div>
+              <div className="stat">
+                <div className="stat-number">98%</div>
+                <div className="stat-label">
+                  <span className="stat-labelText">Client Retention</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <h1 className="hero-title">
-            Your Brand's
-            <br />
-            <span className="isRegularitalic"> Growth Rocket</span>
-            <br />
-            Takes Off Here
-          </h1>
-
-          <p className="hero-subtitle ">
-            We turn "nobody knows us" into "everybody loves us" faster than you
-            can say algorithm.
-            <br />
-            <span className="pun">
-              Spoiler: Your competitors are already losing sleep. 😴
-            </span>
-          </p>
-
-          <div className="cta-buttons">
-            <button className="btn btn-primary" onClick={openWhatsApp}>
-              <span>Let's Create Magic</span>
-            </button>
-          </div>
-
-          <div className="stats">
-            <div className="stat">
-              <div className="stat-number">347%</div>
-              <div className="stat-label">Avg. ROI Boost</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">2.4M+</div>
-              <div className="stat-label">Clicks Generated</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">98%</div>
-              <div className="stat-label">Client Retention</div>
-            </div>
+          <div className="hero-right">
+            <img src={HERO} alt="Hero visual" className="hero-image" />
           </div>
         </div>
       </section>
