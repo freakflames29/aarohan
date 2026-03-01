@@ -1,12 +1,10 @@
-import { useState } from "react";
-
-import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./screens/Home";
 import Blog from "./screens/Blog/Blog";
+import BlogPost from "./screens/Blog/BlogPost";
 
 function App() {
-  const broweserRouter = createBrowserRouter([
+  const browserRouter = createBrowserRouter([
     {
       path: "/",
       element: <Home />,
@@ -15,9 +13,13 @@ function App() {
       path: "/blog",
       element: <Blog />,
     },
+    {
+      path: "/blog/:slug",
+      element: <BlogPost />,
+    },
   ]);
 
-  return <RouterProvider router={broweserRouter} />;
+  return <RouterProvider router={browserRouter} />;
 }
 
 export default App;
