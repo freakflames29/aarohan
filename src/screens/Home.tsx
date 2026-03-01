@@ -7,6 +7,7 @@ import Career from "./Career/Career";
 import AboutUs from "./About/AboutUs";
 import { SERVICES } from "../data/services";
 import { CAREER_POSITIONS } from "../data/career";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,19 +37,16 @@ function Home() {
             <a href="#services" className="nav-link">
               Services
             </a>
-            <button
-              onClick={() => setIsAboutOpen(true)}
-              className="nav-link nav-btn"
-            >
+            <Link to="/blog" className="nav-link">
+              Blogs
+            </Link>
+            <button onClick={() => setIsAboutOpen(true)} className="nav-link">
               About
             </button>
-            <button
-              onClick={() => setIsCareerOpen(true)}
-              className="nav-link nav-btn"
-            >
+            <button onClick={() => setIsCareerOpen(true)} className="nav-link">
               Careers
             </button>
-            <button onClick={openWhatsApp} className="nav-link nav-btn">
+            <button onClick={openWhatsApp} className="nav-link">
               Contact
             </button>
           </div>
@@ -164,12 +162,16 @@ function Home() {
           <div className="footer-right">
             <div className="footer-links">
               <a href="#services">Services</a>
+              <Link to="/blog" className="footer-link-btn">
+                Blogs
+              </Link>
               <button
                 onClick={() => setIsAboutOpen(true)}
                 className="footer-link-btn"
               >
                 About
               </button>
+
               <button
                 onClick={() => setIsCareerOpen(true)}
                 className="footer-link-btn"
