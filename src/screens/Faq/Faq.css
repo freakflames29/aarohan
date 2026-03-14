@@ -1,0 +1,66 @@
+.faq-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 182, 225, 0.2), transparent 30%),
+    radial-gradient(circle at top right, rgba(160, 255, 179, 0.16), transparent 28%),
+    #0a0a0a;
+  color: #ffffff;
+}
+
+.faq-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10rem 1.5rem 6rem;
+}
+
+.faq-hero {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.faq-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  border: 3px solid #000000;
+  background: #a0ffb3;
+  color: #000000;
+  font-weight: 800;
+  box-shadow: 0 8px 0 #000000;
+}
+
+.faq-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.95;
+  font-weight: 900;
+  max-width: 10ch;
+}
+
+.faq-title-accent {
+  color: #ffb6e1;
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.faq-subtitle {
+  max-width: 42rem;
+  font-size: 1.15rem;
+  color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .faq-shell {
+    padding-top: 8rem;
+  }
+
+  .faq-title {
+    max-width: none;
+  }
+
+  .faq-subtitle {
+    font-size: 1rem;
+  }
+}

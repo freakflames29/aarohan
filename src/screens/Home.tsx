@@ -40,6 +40,9 @@ function Home() {
             <Link to="/blog" className="nav-link">
               Blogs
             </Link>
+            <Link to="/faq" className="nav-link">
+              FAQ
+            </Link>
             <button onClick={() => setIsAboutOpen(true)} className="nav-link">
               About
             </button>
@@ -164,6 +167,9 @@ function Home() {
               <a href="#services">Services</a>
               <Link to="/blog" className="footer-link-btn">
                 Blogs
+              </Link>
+              <Link to="/faq" className="footer-link-btn">
+                FAQ
               </Link>
               <button
                 onClick={() => setIsAboutOpen(true)}

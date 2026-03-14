@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { getAllBlogs } from "../../data/blogEnum";
 import type { BlogMetadata } from "../../data/blogEnum";
 import "./Blog.css";
+import IMG from "../../assets/blacklogo.png";
 
 const Blog = () => {
   const blogs: BlogMetadata[] = getAllBlogs();
@@ -10,13 +11,16 @@ const Blog = () => {
     <div className="blog-page">
       <nav className="navbar">
         <div className="nav-content">
-          <Link to="/" className="logo">
-            <span className="logo-icon">🚀</span>
-            <span className="logo-text">Aarohan</span>
-          </Link>
+          <div className="logo">
+            <Link to={"/"}>
+            {/* <h3 className="logoFont">Aarohan</h3> */}
+            <img src={IMG} className="logoImg" />
+            </Link>
+          </div>
           <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
+            <Link to="/faq" className="nav-link">
+              FAQ
+            </Link>
           </div>
         </div>
       </nav>
@@ -75,7 +79,7 @@ const Blog = () => {
           </div>
           <div className="footer-links">
             <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
+            <Link to="/faq">FAQ</Link>
           </div>
         </div>
       </footer>
