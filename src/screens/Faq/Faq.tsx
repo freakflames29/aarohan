@@ -1,30 +1,11 @@
-import { Link } from "react-router-dom";
-import IMG from "../../assets/blacklogo.png";
 import FAQSection from "../../components/FAQSection";
+import SiteLayout from "../../components/SiteLayout";
 import { FAQS } from "../../data/faq/faqs";
 import "./Faq.css";
 
 function Faq() {
   return (
-    <div className="faq-page">
-      <nav className="navbar">
-        <div className="nav-content">
-          <div className="logo">
-            <Link to="/">
-              <img src={IMG} className="logoImg" alt="Aarohan logo" />
-            </Link>
-          </div>
-          <div className="nav-links">
-            <Link to="/" className="nav-link">
-              Home
-            </Link>
-            <Link to="/blog" className="nav-link">
-              Blogs
-            </Link>
-          </div>
-        </div>
-      </nav>
-
+    <SiteLayout className="faq-page">
       <main className="faq-shell">
         <section className="faq-hero">
           <span className="faq-badge">Answers, without the back-and-forth</span>
@@ -38,7 +19,7 @@ function Faq() {
 
         <FAQSection items={FAQS} />
       </main>
-    </div>
+    </SiteLayout>
   );
 }
 

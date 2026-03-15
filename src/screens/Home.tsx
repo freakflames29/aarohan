@@ -1,18 +1,10 @@
 import { useState, useEffect } from "react";
-import "../App.css";
-import IMG from "../assets/blacklogo.png";
 import HERO from "../assets/hero_png.png";
-import ROUNDLOGO from "../assets/round.png";
-import Career from "./Career/Career";
-import AboutUs from "./About/AboutUs";
 import { SERVICES } from "../data/services";
-import { CAREER_POSITIONS } from "../data/career";
-import { Link } from "react-router-dom";
+import SiteLayout from "../components/SiteLayout";
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isCareerOpen, setIsCareerOpen] = useState(false);
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const WHATSAPP_NUMBER = "916290717007";
 
   useEffect(() => {
@@ -26,36 +18,7 @@ function Home() {
   };
 
   return (
-    <div className="app">
-      <nav className="navbar">
-        <div className="nav-content">
-          <div className="logo">
-            {/* <h3 className="logoFont">Aarohan</h3> */}
-            <img src={IMG} className="logoImg" />
-          </div>
-          <div className="nav-links">
-            <a href="#services" className="nav-link">
-              Services
-            </a>
-            <Link to="/blog" className="nav-link">
-              Blogs
-            </Link>
-            <Link to="/faq" className="nav-link">
-              FAQ
-            </Link>
-            <button onClick={() => setIsAboutOpen(true)} className="nav-link">
-              About
-            </button>
-            <button onClick={() => setIsCareerOpen(true)} className="nav-link">
-              Careers
-            </button>
-            <button onClick={openWhatsApp} className="nav-link">
-              Contact
-            </button>
-          </div>
-        </div>
-      </nav>
-
+    <SiteLayout className="app">
       <section className={`hero ${isVisible ? "visible" : ""}`}>
         <div className="hero-content">
           <div className="hero-left">
@@ -150,58 +113,7 @@ function Home() {
           </button>
         </div>
       </section>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-left">
-            <div className="logo">
-              <img src={ROUNDLOGO} className="logoImg footerLogo" />
-            </div>
-            <p>
-              Launching brands into the stratosphere since day one. Your
-              competitors are still looking up. 👀
-            </p>
-          </div>
-          <div className="footer-right">
-            <div className="footer-links">
-              <a href="#services">Services</a>
-              <Link to="/blog" className="footer-link-btn">
-                Blogs
-              </Link>
-              <Link to="/faq" className="footer-link-btn">
-                FAQ
-              </Link>
-              <button
-                onClick={() => setIsAboutOpen(true)}
-                className="footer-link-btn"
-              >
-                About
-              </button>
-
-              <button
-                onClick={() => setIsCareerOpen(true)}
-                className="footer-link-btn"
-              >
-                Careers
-              </button>
-              <button onClick={openWhatsApp} className="footer-link-btn">
-                Contact
-              </button>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Career Sheet */}
-      <Career
-        isOpen={isCareerOpen}
-        onClose={() => setIsCareerOpen(false)}
-        positions={CAREER_POSITIONS}
-      />
-
-      {/* About Us Sheet */}
-      <AboutUs isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
-    </div>
+    </SiteLayout>
   );
 }
 

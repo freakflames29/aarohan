@@ -409,6 +409,7 @@
   max-width: 1400px;
   margin: 0 auto;
   /* background: #ffffff; */
+  scroll-margin-top: 7rem;
 }
 
 .section-header {
@@ -505,6 +506,7 @@
   padding: 8rem 3rem;
   background: #fffbb1;
   text-align: center;
+  scroll-margin-top: 7rem;
 }
 
 .cta-content h2 {

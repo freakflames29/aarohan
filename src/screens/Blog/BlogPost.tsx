@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { useEffect, useState } from "react";
+import SiteLayout from "../../components/SiteLayout";
 import { getAllBlogs, getBlogBySlug } from "../../data/blogEnum";
 import { loadBlogContent } from "../../utils/blogLoader";
 import type { BlogPost as BlogPostType } from "../../utils/blogLoader";
@@ -37,37 +38,16 @@ const BlogPost = () => {
 
   if (loading || !post) {
     return (
-      <div className="blog-page blog-post-page">
-        <nav className="navbar">
-          <div className="nav-content">
-            <Link to="/" className="logo">
-              <span className="logo-icon">🚀</span>
-              <span className="logo-text">Aarohan</span>
-            </Link>
-          </div>
-        </nav>
+      <SiteLayout className="blog-page blog-post-page">
         <div className="blog-post loading">
           <div className="loading-spinner">Loading...</div>
         </div>
-      </div>
+      </SiteLayout>
     );
   }
 
   return (
-    <div className="blog-page blog-post-page">
-      <nav className="navbar">
-        <div className="nav-content">
-          <Link to="/" className="logo">
-            <span className="logo-icon">🚀</span>
-            <span className="logo-text">Aarohan</span>
-          </Link>
-          <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
-          </div>
-        </div>
-      </nav>
-
+    <SiteLayout className="blog-page blog-post-page">
       <article className="blog-post">
         <header className="blog-post-header">
           <div className="blog-post-meta">
@@ -93,13 +73,19 @@ const BlogPost = () => {
         <div className="blog-post-footer">
           <div className="blog-navigation">
             {prevPost && (
-              <Link to={`/blog/${prevPost.slug}`} className="nav-link prev">
+              <Link
+                to={`/blog/${prevPost.slug}`}
+                className="blog-post-nav-link prev"
+              >
                 <span className="nav-label">← Previous</span>
                 <span className="nav-title">{prevPost.title}</span>
               </Link>
             )}
             {nextPost && (
-              <Link to={`/blog/${nextPost.slug}`} className="nav-link next">
+              <Link
+                to={`/blog/${nextPost.slug}`}
+                className="blog-post-nav-link next"
+              >
                 <span className="nav-label">Next →</span>
                 <span className="nav-title">{nextPost.title}</span>
               </Link>
@@ -107,23 +93,7 @@ const BlogPost = () => {
           </div>
         </div>
       </article>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-left">
-            <div className="logo">
-              <span className="logo-icon">🚀</span>
-              <span className="logo-text">Aarohan</span>
-            </div>
-            <p>Launching brands into the stratosphere since day one.</p>
-          </div>
-          <div className="footer-links">
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </SiteLayout>
   );
 };
 
