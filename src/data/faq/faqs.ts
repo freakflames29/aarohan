@@ -7,35 +7,44 @@ export type FAQItem = {
 
 export const FAQS: FAQItem[] = [
   {
-    id: "onboarding",
-    question: "How quickly can we get started with Aarohan?",
+    id: "1",
+    question:
+      "Why should I hire a creative marketing agency instead of doing it in-house?",
     answer:
-      "Most projects can kick off within a few days once we align on your goals, scope, and timelines. We keep onboarding lightweight so momentum starts fast.",
+      "An agency brings expert strategy, fresh ideas, tools, and a full team at a lower cost than hiring multiple in-house professionals.",
     mostAsked: true,
   },
   {
-    id: "services",
-    question: "What kind of marketing support do you offer?",
+    id: "2",
+    question: " What makes your agency different from others?",
     answer:
-      "We help with strategy, content, performance marketing, social media, creative direction, and growth-focused campaigns tailored to your brand stage.",
+      "We don’t just post content. We build brand identity, run performance driven ads, create UGC, and design strategies focused on real business growth.",
     mostAsked: true,
   },
   {
-    id: "pricing",
-    question: "Do you offer custom plans or only fixed packages?",
+    id: "3",
+    question: "Do you work with small businesses or only big brands?",
     answer:
-      "We usually recommend custom plans because every brand has different goals, channels, and growth timelines. That keeps the work practical and focused.",
+      "We work with startups, local businesses, and growing brands offering customized plans based on your goals and budget.",
   },
   {
-    id: "industries",
-    question: "Do you work with only one type of industry?",
+    id: "4",
+    question: "Will I get measurable results?",
     answer:
-      "No. We work across industries as long as there is a clear growth problem to solve and room to build a sharper brand and marketing engine.",
+      "Absolutely. From logo design and brand positioning to social media presence and website creation , we handle it all",
+    mostAsked: true,
   },
   {
-    id: "communication",
-    question: "How do you share updates and results?",
+    id: "5",
+    question: "How do we get started?",
     answer:
-      "We keep communication straightforward with regular check-ins, campaign updates, and performance reviews so you always know what is working and what is next.",
+      "Simple. Contact us, share your goals, and we’ll schedule a strategy discussion to create a customized plan for your brand.",
+    mostAsked: true,
+  },
+  {
+    id: "6",
+    question: "Do I need paid ads, or is organic marketing enough?",
+    answer:
+      "Organic builds long-term trust, while paid ads accelerate growth. A smart combination of both gives the best results.",
   },
 ];

@@ -55,16 +55,6 @@ export const blogMetadataMap: Record<BlogSlug, BlogMetadata> = {
     readTime: "6 min read",
     contentPath: "/src/data/blogs/seo-without-boring-stuff.md",
   },
-  [BlogSlug.CRAZY]: {
-    id: "4",
-    slug: BlogSlug.CRAZY,
-    title: "How the thing is working",
-    excerpt: "CRAZY is loading",
-    image: "https://www.shutterstock.com/image-vector/cartoon-comic-mascot-make-crazy-600nw-2472374863.jpg",
-    date: "2024-03-01",
-    readTime: "1 min read",
-    contentPath: "/src/data/blogs/crazy.md",
-  },
 };
 
 export const getAllBlogs = (): BlogMetadata[] => {
