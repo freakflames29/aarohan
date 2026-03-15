@@ -2,7 +2,6 @@ export const BlogSlug = {
   SOCIAL_MEDIA_GROWTH_2024: "social-media-growth-2024",
   CONTENT_THAT_CONVERTS: "content-that-converts",
   SEO_WITHOUT_BORING_STUFF: "seo-without-boring-stuff",
-  CRAZY: "crazy",
 } as const;
 
 export type BlogSlug = (typeof BlogSlug)[keyof typeof BlogSlug];
